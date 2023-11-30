@@ -1,0 +1,326 @@
+/*ALL*/
+body {
+    margin-top: 0;
+    margin-left: 0;
+}
+h1 {
+    margin-left: 0px;
+}
+
+/*LOGO*/
+header h1 {
+    font-family: 'Anton';
+    font-size: 35px;
+    padding-left: 5%;
+    margin-top:0;
+    padding-top: 50px;
+    color: white;
+}
+
+#logo {
+    height:25px;
+    width:207px;
+    margin-top:5%;
+    margin-left: 5%;
+}
+
+#hero {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: -1;
+    height:100vh;
+    object-fit: cover;
+}
+
+.header {
+    position: relative;
+    z-index: 1;
+    height: 100vh;
+}
+
+h2 {
+
+    color:#FFD15B;
+    font-family: 'Anton';
+    font-weight: 400;
+    font-size: 44px;
+    text-align: center;
+    margin-top:7%;
+    margin-bottom: 30px;
+}
+
+#container-input {
+    display:flex;
+    justify-content: center;
+   
+}
+
+#container-input i {
+    color:white;
+    position: relative;
+    background-color: black;
+    border-radius: 10px;
+    font-size: 25px;
+    right:60px;
+    top :7px;
+    height:25px;
+    margin-top: 4px;
+    padding-top:15px;
+    padding-bottom:35px;
+    padding-right:15px;
+    padding-left:15px;
+}
+
+#container-input input {
+    border-radius: 10px;
+    height:72px;
+    width:80%;
+    padding-left:35px;
+    border-color: white;
+}
+
+main {
+margin-bottom:5000px;
+background-color: lightgrey;
+}
+
+<-- COMBO BOXES -->
+
+#combo-boxes-container {
+    margin-top: 20px;
+    display: flex;
+}
+
+#ingredients-combo, #appliances-combo, #ustensils-combo {
+    position: relative;
+    display: inline-block;
+    display:flex;
+    margin-left:100px;
+    display: flex;
+    justify-content: space-between;
+    cursor: pointer;
+    background-color: white;
+    border-radius: 10px;
+    padding: 10px;
+    width: 195px;
+    padding-right: 15px;
+}
+
+#ingredients-combo::after, #appliances-combo::after, #ustensils-combo::after {
+    content: "▼"; /* Utilisez le caractère que vous préférez pour la flèche vers le bas */
+    margin-left: 5px; /* Ajoutez un espace entre "Ingrédients" et la flèche */
+    display: inline-block;
+}
+
+#ingredients-options, #appliances-options, #ustensils-options {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: white;
+    max-height: 150px;
+    overflow-y: auto;
+}
+
+
+
+
+/!-- RECIPES -->
+
+#body {
+    background-color: #D3D3D3;
+    }
+
+#recipe-container {
+    display: flex;
+    flex-wrap: wrap; /* Permet aux éléments de passer à la ligne quand l'espace est insuffisant */
+    gap: 50px;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #D3D3D3;
+    justify-content: space-between;
+}
+
+@media screen and (max-width: 1200px) {
+    #recipe-container {
+        justify-content: center;  
+        margin: 0 auto;/* Répartit les éléments horizontalement */
+    }
+}
+
+@media screen and (max-width: 870px) {
+    #recipe-container {
+        justify-content: center; /* Centre les éléments horizontalement */
+    }
+}
+
+.recipe-card {
+    width: 380px;
+    border-radius: 10px;
+    background-color: white;
+    padding-bottom: 60px;
+}
+
+
+.recipe-img {
+    object-fit: cover;
+    width:380px;
+    height:250px;
+    margin-top: -30px;
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+}
+
+.prep-time {
+    position: relative;
+    top:15px;
+    left:300px;
+    background-color: #FFD15B;
+    padding-right : 15px;
+    padding-left : 15px;
+    width: 60px;
+    height:30px;
+    line-height: 30px;
+    text-align: center;
+    border-radius: 10px;
+    font-family: 'Manrope';
+    font-weight: 400;
+    font-size: 12px;
+}
+
+.recipe-content {
+    padding-left: 25px;
+    padding-right: 25px;
+}
+
+.recipe-title {
+    font-family: 'Anton';
+    font-weight: 400;
+    font-size: 18px;
+    color: black;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    text-align: left;
+}
+
+.recipe-subtitle {
+    font-family: 'Manrope';
+    font-weight: 700;
+    font-size: 12px;
+    color:#7A7A7A;
+}
+
+.recipe-description {
+    font-family: 'Manrope';
+    font-weight: 400;
+    font-size: 14px;
+    color:black;
+    padding-bottom: 30px;
+}
+
+
+.ingredients-list {
+    columns: 2; 
+    column-gap: 20px; 
+    padding: 0; 
+    list-style: none; 
+}
+
+.ingredients-list li {
+    margin-bottom: 10px;
+}
+
+.ingredients-list ul {
+list-style-type: none;
+text-align: right;
+}
+
+.ingredients-list li {
+    display: flex;
+    flex-direction: column;
+}
+
+.ingredient-type {
+    font-family: 'Manrope';
+    font-weight: 400;
+    font-size: 14px;
+    color:black;
+}
+
+.ingredient-quantity {
+    color :#7A7A7A;
+    padding-bottom:20px;
+}
+
+/*COMBO BOXES*/ 
+#CB-container {
+    display:flex;
+    padding-top: 30px;
+}
+
+#ingredient-combo {
+    overflow: hidden;
+} 
+
+#combo-boxes-ingredients #combo-boxes-ustensils, #combo-boxes-appliances {
+    width:200px;
+}
+
+
+#ingredient-options {
+    position:relative;
+    display: flex;
+    overflow: hidden;
+}
+
+
+//PILLS
+
+#selected-items{
+    margin-left: 100px;
+    max-width:100px;
+    height:50px;
+    font-family: 'Manrope';
+    font-weight: 400;
+    font-size: 14px;
+    margin-top:20px;
+    display: none;
+}
+
+#container-selected-items {
+    display: flex;
+}
+
+.displayPill {
+    display: flex;
+}
+
+.pillContenair {
+    display: flex;
+    margin-right: 150px;
+}
+
+.pill {
+justify-content: center;
+display:flex;
+padding-top:15px;
+align-items: flex-start ;
+flex-direction: row-reverse;
+justify-content: space-between;
+margin-left: 30px;
+background-color: #FFD15B;
+margin-right: 15px;
+min-width:150px;
+height:53px;
+}
+
+.close-button {
+    padding-right: 5px;
+}
+
+.pillContent {
+    padding-left:10px
+}
