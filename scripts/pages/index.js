@@ -1812,10 +1812,8 @@ const searchButton = document.getElementById("search-input");
 searchButton.addEventListener("click", searchRecipesInput);
 
 function searchRecipesInput() {
-    console.log('test');
     const searchedTerm = document.getElementById("user-search").value;
     const searchTerm = document.getElementById("user-search").value.toLowerCase(); 
-console.log(searchTerm);
     const matchingRecipes = recipes.filter((recipe) => {
         const recipeName = recipe.name.toLowerCase();
         const recipeDescription = recipe.description.toLowerCase();
@@ -1900,8 +1898,10 @@ const ingredientSelect = document.getElementsByClassName("option");
 for (const option of ingredientSelect) {
   option.addEventListener("click", () => {
     const selectedValue = option.textContent;
+    if(!selectedItems.includes(selectedValue)){
     selectedItems.push(selectedValue);
     displayPill();
+    }
   });
 }
 
@@ -2138,10 +2138,45 @@ function searchRecipesCB() {
 
   // INPUT COMBO BOX
 document.addEventListener('DOMContentLoaded', function () {
-    const comboBox = document.querySelector('.combobox');
+    const comboBox = document.querySelector('.input-user');
     if (comboBox) {
         comboBox.addEventListener('click', function (e) {
             e.stopPropagation();
         });
     }
+    const pills = document.getElementsByClassName('.pillContent');
+    console.log('test' + selectItem);
 });
+
+ if (selectedIngredients) {
+
+ }
+
+const ingredientsInput = document.querySelector('.input-user');
+const ingredientsOptions = document.querySelectorAll('.option');
+
+// Ajout d'un événement pour filtrer les options au fur et à mesure de la saisie dans l'input
+ingredientsInput.addEventListener('input', function() {
+    const searchText = this.value.toLowerCase();
+    console.log("BOUH")
+    for (let i = 0; i < ingredientsOptions.length; i++) {
+        const optionText = ingredientsOptions[i].textContent.toLowerCase();
+        if (optionText.includes(searchText)) {
+            ingredientsOptions[i].style.display = 'block';
+        } else {
+            ingredientsOptions[i].style.display = 'none';
+            console.log("NOPE")
+        }
+    }
+});
+
+// Ajout d'un événement pour sélectionner une option lorsque cliquée dans la liste filtrée
+for (let i = 0; i < ingredientsOptions.length; i++) {
+    ingredientsOptions[i].addEventListener('click', function() {
+        ingredientsInput.value = this.textContent.trim();
+        // Réinitialisation de l'affichage des options après la sélection
+        for (let j = 0; j < ingredientsOptions.length; j++) {
+            ingredientsOptions[j].style.display = 'block';
+        }
+    });
+}

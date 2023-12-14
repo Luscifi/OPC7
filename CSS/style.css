@@ -94,11 +94,7 @@ background-color: lightgrey;
 }
 
 #ingredients-combo, #appliances-combo, #ustensils-combo {
-    position: relative;
-    display: inline-block;
     display:flex;
-    margin-left:100px;
-    display: flex;
     justify-content: space-between;
     cursor: pointer;
     background-color: white;
@@ -106,17 +102,30 @@ background-color: lightgrey;
     padding: 10px;
     width: 195px;
     padding-right: 15px;
+    flex-wrap: wrap;
 }
 
+#appliances-combo, #ustensils-combo { 
+    margin-left: 30%;
+}
+
+
+@media screen and (max-width: 900px) {
+    #ingredients-combo, #appliances-combo, #ustensils-combo {
+        margin-top: 10px;
+        margin-left: 50px;
+    }
+}
+
+
 #ingredients-combo::after, #appliances-combo::after, #ustensils-combo::after {
-    content: "▼"; /* Utilisez le caractère que vous préférez pour la flèche vers le bas */
-    margin-left: 5px; /* Ajoutez un espace entre "Ingrédients" et la flèche */
+    content: "▼"; 
+    margin-left: 5px; 
     display: inline-block;
 }
 
 #ingredients-options, #appliances-options, #ustensils-options {
     display: none;
-    position: absolute;
     top: 100%;
     left: 0;
     background-color: white;
@@ -135,19 +144,22 @@ background-color: lightgrey;
 
 #recipe-container {
     display: flex;
-    flex-wrap: wrap; /* Permet aux éléments de passer à la ligne quand l'espace est insuffisant */
+    flex-wrap: wrap; 
     gap: 50px;
     max-width: 1400px;
     margin: 0 auto;
     padding: 20px;
     background-color: #D3D3D3;
     justify-content: space-between;
+    margin-top: 60px;
 }
 
-@media screen and (max-width: 1200px) {
+@media screen and (max-width: 1280px) {
     #recipe-container {
         justify-content: center;  
-        margin: 0 auto;/* Répartit les éléments horizontalement */
+        margin: 0 auto;
+        margin-top: 60px;
+        justify-content: space-around;
     }
 }
 
@@ -158,6 +170,7 @@ background-color: lightgrey;
 }
 
 .recipe-card {
+    position: relative;
     width: 380px;
     border-radius: 10px;
     background-color: white;
@@ -167,7 +180,7 @@ background-color: lightgrey;
 
 .recipe-img {
     object-fit: cover;
-    width:380px;
+    width:100%;
     height:250px;
     margin-top: -30px;
     border-top-right-radius: 10px;
@@ -175,12 +188,9 @@ background-color: lightgrey;
 }
 
 .prep-time {
-    position: relative;
-    top:15px;
-    left:300px;
+    position: absolute;
+    right:15px;
     background-color: #FFD15B;
-    padding-right : 15px;
-    padding-left : 15px;
     width: 60px;
     height:30px;
     line-height: 30px;
@@ -259,16 +269,21 @@ text-align: right;
 #CB-container {
     display:flex;
     padding-top: 30px;
+    justify-content: flex-start;
+    margin-left: 5%;
 }
-
-#ingredient-combo {
-    overflow: hidden;
-} 
 
 #combo-boxes-ingredients #combo-boxes-ustensils, #combo-boxes-appliances {
     width:200px;
+    margin-right: 10px;
 }
 
+@media screen and (max-width: 900px) {
+    #CB-container {
+        flex-direction: column;
+        padding-top: 5%;
+    }
+}
 
 #ingredient-options {
     position:relative;
@@ -296,11 +311,12 @@ text-align: right;
 
 .displayPill {
     display: flex;
+    margin-left: 3%;
 }
 
 .pillContenair {
     display: flex;
-    margin-right: 150px;
+
 }
 
 .pill {
@@ -315,6 +331,7 @@ background-color: #FFD15B;
 margin-right: 15px;
 min-width:150px;
 height:53px;
+margin-top: 10%;
 }
 
 .close-button {
